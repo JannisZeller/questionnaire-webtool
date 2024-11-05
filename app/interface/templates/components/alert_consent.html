@@ -1,0 +1,10 @@
+{% if consent_missing %}
+  <div class="bg-danger my-3 p-2 text-center rounded">
+    <p>
+      Um sich einzuloggen, ihren Account zurückzusetzen oder einen Account zu     erstellen, müssen Sie den Nutzungsbedingungen (<a href="{{ url_for('index_interface.about') }}">Datenschutzhinweise</a>) zustimmen.
+    </p>
+    <a class="btn btn-secondary col-6 col-md-2" href="{{ url_for('consent_interface.consent') }}">
+      Jetzt zustimmen.
+    </a>
+  </div>
+{% endif %}

@@ -1,0 +1,22 @@
+<div class="row text-center">
+  <h3><u>Aufgabe 20</u></h3>
+</div>
+
+<p>
+  <strong>Nennen Sie eine fachlich nicht korrekte Vorstellungen zu dem physikalischen <u>Konzept</u> der Trägheit, die Schüler typischerweise haben.</strong>
+</p>
+
+<div class="container mt-2">
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A20'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A20'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A20'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

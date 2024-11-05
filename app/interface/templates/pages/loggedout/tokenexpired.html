@@ -1,0 +1,19 @@
+{% extends "./components/base.html" %}
+
+{% block head %}
+	<title>FDW-Assessment</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-md p-3">
+
+    <div class="container justify-content-center text-center border-bottom mb-3">
+      <h1>Willkommen beim FDW-Assessment Physik</h1>
+    </div>
+
+    <p class="my-3 text-center">
+      Ihre Login-Session ist abgelaufen. Bitte <a href="{{ url_for('auth_interface.login') }}">loggen Sie sich erneut ein</a>
+    </p>
+</div>
+{% endblock %}

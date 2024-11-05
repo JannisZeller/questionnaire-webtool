@@ -1,0 +1,48 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 23</u></h3>
+</div>
+
+<p>
+  <strong>Sie wollen in der Schule Elementarteilchenphysik unterrichten und haben das bisher noch nie getan. Nennen Sie bitte drei physikdidaktische Aspekte, die Sie zu Beginn der Unterrichtsplanung beachten würden, bevor sie sich mit konkreten methodischen Überlegungen (wie z.B. der Auswahl bestimmter Experimente) beschäftigen.</strong>
+</p>
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A23_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A23_1'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A23_1">1.</label>
+        {{ forms['A23_1'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A23_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A23_2'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A23_2">2.</label>
+        {{ forms['A23_2'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A23_3'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A23_3'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A23_3">3.</label>
+        {{ forms['A23_3'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

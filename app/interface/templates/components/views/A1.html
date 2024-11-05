@@ -1,0 +1,137 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 1</u></h3>
+</div>
+
+<p>
+  <strong>Ein Lehrer hat das Wechselwirkungsprinzip „Actio=Reactio“ (3. Newtonsches Axiom) in einer 9. Klasse eingeführt. Nachfolgend spielt sich folgende Szene ab.</strong>
+</p>
+
+<div class="container rounded border py-2">
+  <div class="row">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Stellt euch jetzt einmal vor, ein Apfel hängt an einem Baum. Wo haben wir hier jetzt Actio und Reactio?
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler A:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Na, ist doch klar, der Apfel zieht am Ast und der Ast hält den Apfel oben!
+    </div>
+  </div>
+  <div class="row mt-2">
+    <strong><i>Die Klasse signalisiert Zustimmung.</i></strong>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Ja richtig - schön, ihr habt es verstanden! Was ist denn dann, wenn der Apfel jetzt herunterfällt? Also während des Fallens, wo ist da Actio und Reactio?
+    </div>
+  </div>
+  <div class="row mt-2">
+    <strong><i>Ein Gemurmel stellt sich ein.</i></strong>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler B:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Ja gilt das denn dann überhaupt noch? Ich meine, ist doch immer nur ideal, dass das gilt?!?
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler A:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Klar hast du noch Actio und Reactio, nur Actio wird halt immer größer, der Apfel wird ja schließlich schneller beim Fallen!
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler B:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Ich dachte, die müssen gleich sein? Wo willst du überhaupt Reactio haben, der fällt doch frei und wird nicht mehr gehalten!?!
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler A:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Hm. Na Actio hast du auf jeden Fall schon mal, er bewegt sich ja. Und er wird ja auch nicht beliebig schnell, die Luftreibung bremst ihn ja. Das ist deine Reactio!
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>a)</strong>
+    </div>
+    <div class="col-main">
+      <strong>Offensichtlich haben die Schüler die Ausführungen des Lehrers nicht richtig verstanden, die Übertragung auf die Situation mit dem frei fallenden Apfel gelingt nicht. Analysieren Sie die Szene: Inwiefern ist das Vorgehen des Lehrers nicht optimal?</strong>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A1a'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A1a'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A1a'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>b)</strong>
+    </div>
+    <div class="col-main">
+      <strong>In den Aussagen der Schüler werden einige typische, fachlich nicht korrekte Vorstellungen deutlich. Welche können Sie jeweils bei den Schülern entdecken? Nennen Sie zwei.</strong>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A1b_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A1b_1'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A1b_1">1.</label>
+        {{ forms['A1b_1'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A1b_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A1b_2'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A1b_2">2.</label>
+        {{ forms['A1b_2'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

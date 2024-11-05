@@ -1,0 +1,25 @@
+<div class="row text-center">
+  <h3><u>Aufgabe 22</u></h3>
+</div>
+
+<p>
+  <strong>Ein Lehrer lässt im Physikunterricht ein quantitatives Schülerexperiment durchführen. Die Ergebnisse aller Gruppen sind sehr gut (im Sinne des Literaturwertes). Trotzdem bespricht der Lehrer ausführlich Messfehler sowie die Aussagekraft und Reproduzierbarkeit der Ergebnisse.</strong>
+</p>
+<p>
+  <strong>Unter welcher Zielstellung ist das Vorgehen sinnvoll?</strong>
+</p>
+
+<div class="container mt-2">
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A22'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A22'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A22'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

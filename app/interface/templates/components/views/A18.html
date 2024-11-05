@@ -1,0 +1,125 @@
+{% block prescripts %}
+  <script src="{{ url_for('static', filename='drawer.js') }}"></script>
+{% endblock %}
+
+
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 18</u></h3>
+</div>
+
+<p>
+  <strong>Ein geworfener Ball beschreibt eine Bahn wie in der unten stehenden Abbildung. Die Pfeile geben dabei die Richtung an, in der der Ball die Bahnkurve durchläuft. <br>
+  Schüler sollen alle Kräfte einzeichnen, die auf diesen Ball in den Punkten 1-4 wirken.</strong>
+</p>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>a)</strong>
+    </div>
+    <div class="col-main">
+      <strong>Bitte zeichnen Sie in das Bildfeld unten ein, welche Kraftpfeile Sie bei einem Schüler <u>mit typischem, falschem Konzept</u> erwarten. <br>
+      (Es genügt, wenn Sie eine beispielhaft falsche Lösung gedanklich auswählen und einzeichnen.)</strong>
+    </div>
+  </div>
+
+</div>
+
+{# <img src="{{ url_for('static', filename='assets/images/img_A18_1.jpg') }}" style="width: 100%;"> #}
+
+
+<div class="row mt-2 justify-content-center">
+
+  <div class="row justify-content-center">
+    {# id="can" width="400" height="280"  #}
+    <canvas
+      id="A18a-canvas" width="200" height="200"
+      class="draw-canvas"
+      data-initialImage="data:image/png;base64,{{ forms['A18a'].image_data }}"
+      style="
+        padding: 0;
+        image-rendering: pixelated;
+        background: url( {{ url_for('static', filename='assets/images/img_A18_1.jpg') }} );
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      Ihr Browser unterstützt die Canvas-Funktion und damit dieses Widget nicht.
+    </canvas>
+  </div>
+
+  <div
+    id="A18a-submission-banner"
+    class="container text-center submission-banner"
+  >
+    <div class="rounded bg-success p-2 m-2" style="display: inline;">
+      Änderungen gespeichert.
+    </div>
+  </div>
+
+  <div class="container mt-2 text-center">
+
+    <button type="button" class="btn btn-secondary mx-1 d-inline" id="A18a-clear">
+      Löschen
+    </button>
+    <button type="button" class="btn btn-secondary mx-1 d-inline" id="A18a-save">
+      Download
+    </button>
+
+    <div class="row mt-2">
+      <form
+        action="{{ forms['A18a'].action_url }}"
+        method="POST"
+      >
+        {{ forms['A18a'].hidden_tag() }}
+        <div class="form-group row">
+          {{ forms['A18a'].image(class_="form-control d-none") }}
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary mx-1 d-inline" id="A18a-submit">
+            Absenden
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>b)</strong>
+    </div>
+    <div class="col-main">
+      <strong>Bitte begründen Sie, welche Fehlvorstellung(en) mit der Schülerlösung verknüpft ist (sind).</strong>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A18b'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A18b'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A18b'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+{% block postscripts %}
+  <script>
+    document.addEventListener("DOMContentLoaded", e => {
+      initializeDrawableImage("A18a");
+    })
+  </script>
+{% endblock %}

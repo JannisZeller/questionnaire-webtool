@@ -1,0 +1,22 @@
+<div class="row text-center">
+  <h3><u>Aufgabe 11</u></h3>
+</div>
+
+<p>
+  <strong>Wo liegt der grundsätzliche Unterschied <u>im Umgang</u> mit ausbaufähigen (belastbaren) und nicht ausbaufähigen (nicht belastbaren) Schülervorstellungen?</strong>
+</p>
+
+<div class="container mt-2">
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A11'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A11'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A11'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

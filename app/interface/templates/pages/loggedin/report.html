@@ -1,0 +1,98 @@
+{% extends "./components/base_loggedin.html" %}
+{% set active_view = active_view|default('report') %}
+
+
+
+
+{% block head %}
+	<title>FDWA-Report</title>
+{% endblock %}
+
+
+{% block innerContent %}
+	<div class="container justify-content-center text-center border-bottom">
+		<h2>Report</h2>
+	</div>
+	<div class="content">
+		<p>
+			Sie befinden sich in deiner Testbearbeitung "<b>{{ active_test_name }}
+			(ID {{ active_edit_no }})</b>". Um die aktive Testbearbeitung zu wechseln
+			oder eine neue hinzuzufügen, nutzen Sie bitte die Einstellungen unter
+			"<a href="{{ url_for('account_interface.account') }}">Account</a>".
+		</p>
+	</div>
+	<div class="content">
+		<p>
+			Wenn Sie den Fragebogen fertig bearbeitet haben, oder ein
+			Zwischenergebnis wünschen, nutzen Sie den folgenden Button, um einen
+			Report zu erstellen oder zu aktualisieren. Der Server berechnet dann
+			Ihre Ergebnisse und diese Seite wird sich automatisch aktualisieren,
+			sobald die Ergebnisse bereit sind.
+		</p>
+		<p>
+			Letzte Testbearbeitung: {{ last_response }}
+		</p>
+		<p>
+			Letzte Reporterstellung: {{ last_report }}
+		</p>
+	</div>
+
+    <form
+		id="genRepForm"
+		class="d-none"
+		action="{{ url_for('report_interface.generate_report') }}"
+		method="POST"
+    >
+    </form>
+
+	<div class="content my-2 text-center">
+		<button
+			id="genRepBtn"
+			class="d-inline-block w-50 btn btn-primary"
+		>
+			Report erstellen / aktualisieren
+		</button>
+	</div>
+
+	<div id="loaderContainer" class="content my-5 d-none text-center justify-content-center">
+		<div class="loader"></div>
+	</div>
+
+	<div id="results" class="content my-2 text-center">
+		{% if cluster %}
+			<div class="w-100 my-3 pt-3">
+				Sie befinden sich am ehesten im Kompetenzprofil: "{{ cluster }}".
+			</div>
+		{% endif %}
+
+		{% if df_scores %}
+			<div class="w-100 my-1 py-3 overflow-scroll">
+				{% autoescape false %}
+				{{ df_scores }}
+				{% endautoescape %}
+			</div>
+		{% endif %}
+
+		{% if df_dimscores %}
+			<div class="w-100 my-1 py-3 overflow-scroll">
+				{% autoescape false %}
+				{{ df_dimscores }}
+				{% endautoescape %}
+			</div>
+		{% endif %}
+
+		{% if img_dimscores %}
+			<div class="w-100 mt-3">
+				{% autoescape false %}
+					{{ img_dimscores }}
+				{% endautoescape %}
+			</div>
+		{% endif %}
+	</div>
+
+
+{% endblock %}
+
+{% block postscripts %}
+	<script src="{{ url_for('static', filename='report.js') }}"></script>
+{% endblock %}

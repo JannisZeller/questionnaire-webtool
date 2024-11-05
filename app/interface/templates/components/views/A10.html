@@ -1,0 +1,43 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 10</u></h3>
+</div>
+
+<p>
+  <strong>Im Physikunterricht der Klasse 10 möchten Sie als Ziel Ihrer Unterrichtsstunde den Zusammenhang zwischen Weg und Zeit <i>s ~ t²</i> beim freien Fall im Schülerversuch erarbeiten lassen.</strong>
+</p>
+
+<div class="container rounded border pt-2">
+  <p>
+    Im Klassengespräch wurden Vermutungen über denkbare Zusammenhänge von Weg und Zeit formuliert und an der Tafel zur Prüfung durch Schülerversuche festgehalten. Von den Schülern wurden ein linearer und ein nicht-linearer Zusammenhang vermutet.
+  </p>
+  <p>
+    Im Schülerversuch lassen Schülergruppen jeweils eine kleine Stahlkugel im Treppenhaus der Schule aus verschiedenen Höhen fallen und messen die Zeit vom Loslassen bis zum Aufschlagen mit einer Stoppuhr.
+  </p>
+  <p>
+    Anschließend tragen sie ihre Messergebnisse jeweils in ein Zeit-Weg-Diagramm ein und stellen die von ihnen daraus gezogenen Schlussfolgerungen bei der abschließenden Präsentation auf Folien dar.
+  </p>
+  <p>
+    Sie bemerken, dass die Gruppen zu keinem eindeutigen Ergebnis gekommen sind. Einige präsentieren einen quadratischen, andere einen linearen, wieder andere einen nicht linearen Zusammenhang.
+  </p>
+</div>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <strong>Formulieren Sie eine angemessene Reaktion: Skizzieren Sie dazu stichwortartig Ihr mögliches Vorgehen im weiteren Unterrichtsverlauf, um ausgehend von der gegebenen Situation den Zusammenhang <i>s ~ t²</i> zu erarbeiten.</strong>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A10'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A10'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A10'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)", id="A10") }}
+      </div>
+    </form>
+  </div>
+
+</div>

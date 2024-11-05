@@ -1,0 +1,92 @@
+{% extends "./components/base.html" %}
+
+{% block head %}
+  {% if not consent_missing and enable_recaptcha %}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function onLogin(token) {
+        document.getElementById("loginForm").submit();
+      }
+    </script>
+  {% endif %}
+
+  <title>FDW-Assessment Login</title>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container-md p-3" style="margin-bottom: 5em;">
+
+    <div class="container justify-content-center text-center border-bottom mb-3">
+      <h1>Willkommen beim FDW-Assessment Physik</h1>
+    </div>
+
+    <br style="clear:both;"/>
+
+    <h2>Einloggen</h2>
+
+    <form id="loginForm" method="POST" action="">
+      {{ form.hidden_tag() }}
+      <div class="form-group row mt-1">
+        <label for="username" class="col-md-2 col-form-label">Benutzername</label>
+        <div class="col-sm-5">
+          {{ form.username(class_="form-control") }}
+        </div>
+      </div>
+      <div class="form-group row mt-1">
+        <label for="password" class="col-md-2 col-form-label">Passwort</label>
+        <div class="col-sm-5">
+          {{ form.password(class_="form-control") }}
+        </div>
+      </div>
+      {% if not consent_missing %}
+        <div class="form-group row mt-1">
+          <div class="col-md-2"></div>
+          <div class="col-sm-5">
+            {% if enable_recaptcha %}
+              <button
+                type="submit"
+                class="g-recaptcha btn btn-primary"
+                data-sitekey="{{ recaptcha_site_key }}"
+                data-callback='onLogin'
+                data-action='submit'
+              >
+                Ok
+              </button>
+            {% else %}
+              <button
+                type="submit"
+                class="btn btn-primary"
+              >
+                Ok
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </form>
+
+    {% include "./components/form_errors.html" %}
+    {% include "./components/alert_consent.html" %}
+
+    {% if enable_recaptcha %}
+      {% include "./components/alert_recaptcha.html" %}
+    {% endif %}
+
+
+    {% if login_error %}
+      <div class="bg-danger my-3 p-2 rounded text-center">
+        <span>Entweder ist das Passwort nicht korrekt, oder der Nutzername existiert nicht.</span>
+      </div>
+    {% endif %}
+
+    <div class="my-3">
+      <span>Accountdaten vergessen? <a href="{{ url_for('user_reset_interface.request_reset') }}">Account zurücksetzen</a></span>.
+    </div>
+
+    <div class="my-3">
+      <span>Kein Account? <a href="{{ url_for('signup_interface.signup') }}">Registrieren</a></span>.
+    </div>
+
+  </div>
+{% endblock %}

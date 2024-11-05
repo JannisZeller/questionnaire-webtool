@@ -1,0 +1,39 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 3</u></h3>
+</div>
+
+<p>
+  <strong>Das Experiment spielt im Physikunterricht eine zentrale Rolle.</strong>
+</p>
+
+<div class="container mt-2">
+  <div class="row">
+    <strong>Nennen Sie bitte zwei verschiedene Ziele bzw. Funktionen des Experiments im Physikunterricht.</strong>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A3_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A3_1'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A3_1">1.</label>
+        {{ forms['A3_1'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A3_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A3_2'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A3_2">2.</label>
+        {{ forms['A3_2'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

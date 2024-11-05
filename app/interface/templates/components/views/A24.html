@@ -1,0 +1,41 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 24</u></h3>
+</div>
+
+<p>
+  <strong>Was unterscheidet Schülerfehler von Schülerfehlvorstellungen? Nennen Sie jeweils ein Beispiel.</strong>
+</p>
+
+<div class="container mt-2">
+
+  <div class="row">
+    <strong>Schülerfehler:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A24_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A24_1'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A24_1'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+  <div class="row mt-3">
+    <strong>Schülerfehlvorstellung:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A24_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A24_2'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A24_2'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

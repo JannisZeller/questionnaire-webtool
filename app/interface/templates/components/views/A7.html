@@ -1,0 +1,187 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 7</u></h3>
+</div>
+
+<p>
+  <strong>Sie wollen die resultierende Kraft auf einen Körper an der schiefen Ebene veranschaulichen. Sind die folgenden Darstellungen in Bezug auf Verständnisschwierigkeiten und Schülerfehlvorstellungen dafür problematisch?</strong>
+</p>
+
+<div class="container mt-2 ">
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A7a'].action_url }}"
+      method="POST"
+    >
+      {#
+      <div class="row">
+        <div class="col-6 col-md-8"></div>
+        <div class="col-3 col-md-2 text-center">
+          <span class="align-middle">problematisch</span>
+        </div>
+        <div class="col-3 col-md-2 text-center align-middle">
+          <span class="align-middle">nicht problematisch</span>
+        </div>
+      </div>
+      #}
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4 text-center">
+          <span class="align-middle">problematisch</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-2 text-center">
+          <span class="align-middle">ja</span>
+        </div>
+        <div class="col-2 text-center align-middle">
+          <span class="align-middle">nein</span>
+        </div>
+      </div>
+      {{ forms['A7a'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          <img style="width: 100%;" src="{{ url_for('static', filename='assets/images/img_A7a.jpg') }}">
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7a'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7a'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A7b'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A7b'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          <img style="width: 100%;" src="{{ url_for('static', filename='assets/images/img_A7b.jpg') }}">
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7b'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7b'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A7c'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A7c'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          <img style="width: 100%;" src="{{ url_for('static', filename='assets/images/img_A7c.jpg') }}">
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7c'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7c'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A7d'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A7d'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          <img style="width: 100%;" src="{{ url_for('static', filename='assets/images/img_A7d.jpg') }}">
+          <div class="my-2" style="font-size: normal;">
+            <span style="font-family: 'Times New Roman', Times, serif;">F<sub>GN</sub></span> = Komponente der Gewichtskraft orthogonal zur schiefen Ebene
+          </div>
+          <div style="font-size: normal;">
+            <span style="font-family: 'Times New Roman', Times, serif;">F<sub>GH</sub></span> = Komponente der Gewichtskraft parallel zur schiefen Ebene
+          </div>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7d'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A7d'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

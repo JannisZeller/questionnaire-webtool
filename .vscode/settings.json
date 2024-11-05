@@ -1,0 +1,10 @@
+{
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "files.associations": {
+      "*.html": "jinja-html"
+    },
+    "terminal.integrated.env.linux": {
+      "PYTHONPATH": "{$workspaceFolder}",
+    },
+    "cSpell.language": "de,de-DE"
+}

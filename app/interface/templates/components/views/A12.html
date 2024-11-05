@@ -1,0 +1,28 @@
+<div class="row text-center">
+  <h3><u>Aufgabe 12</u></h3>
+</div>
+
+<p>
+  <strong>Nachdem Sie den Zusammenhang <i>s ~ t²</i> in einer Lerngruppe erfolgreich erarbeitet haben, soll nun der Ortsfaktor <i>g</i> selbständig von Schülergruppen bestimmt werden. Die Gruppen können selbst bestimmen, welchen Gegenstand sie fallen lassen.</strong>
+</p>
+<p>
+  <strong>Die aus den Messwerten errechneten Werte für <i>g</i> streuen von <i>7,8 m/s²</i> bis <i>11,3 m/s²</i>. Die Gruppe beendet ihre Messung, als der Mittelwert für <i>g = 9,80 m/s²</i> beträgt.</strong>
+</p>
+<p>
+  <strong>Erläutern Sie anhand dieser Vorgehensweise einen typischen, möglichen Fehler von Schülern bei Planung und Durchführung von Experimenten.</strong>
+</p>
+
+<div class="container mt-2">
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A12'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A12'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A12'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,47 @@
+<span class="fs-4">Menü</span>
+<hr>
+<ul class="nav nav-pills flex-column mb-auto">
+  <li>
+    <a
+      href="{{ url_for('index_interface.home') }}"
+      class="my-1 nav-link side-link {% if active_view == 'home' %}active fw-bold{% endif %}"
+    >
+      Home
+    </a>
+  </li>
+  <li>
+    <a
+      href="{{ url_for('quest_interface.quest') }}"
+      class="my-1 nav-link side-link {% if active_view == 'quest' %}active fw-bold{% endif %}"
+    >
+      FDW-Test
+    </a>
+  </li>
+  <li>
+    <a
+      href="{{ url_for('report_interface.report') }}"
+      class="my-1 nav-link side-link {% if active_view == 'report' %}active fw-bold{% endif %}"
+    >
+      Report
+    </a>
+  </li>
+  <li>
+    <a
+      href="{{ url_for('index_interface.about') }}"
+      class="my-1 nav-link side-link {% if active_view == 'about' %}active fw-bold{% endif %}"
+    >
+      Datenschutz & Impressum
+    </a>
+  </li>
+</ul>
+<hr>
+<div class="dropdown">
+  <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+    <strong>Account</strong>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+    <li><a class="dropdown-item" href="{{ url_for('account_interface.account') }}">Account</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="{{ url_for('auth_interface.logout') }}">Logout</a></li>
+  </ul>
+</div>

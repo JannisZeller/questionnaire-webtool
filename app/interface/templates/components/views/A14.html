@@ -1,0 +1,158 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 14</u></h3>
+</div>
+
+<p>
+  <strong>In einer Einführungsstunde zum Thema Kraft kommt folgender Dialog zustande:</strong>
+</p>
+
+<div class="container rounded border py-2">
+  <div class="row">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Ein Auto bewegt sich aufgrund einer Kraft.
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Was genau macht diese Kraft denn?
+    </div>
+  </div>
+  <div class="row  mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Sie bringt das Auto dazu, sich zu bewegen.
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Was passiert mit der Kraft, wenn das Auto steht?
+    </div>
+  </div>
+  <div class="row  mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Dann ist sie weg, die Kraft ist doch nur dann da, wenn sich das Auto bewegt.
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Ah okay. Und was passiert, wenn das Auto schneller wird?
+    </div>
+  </div>
+  <div class="row  mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Dann wird auch die Kraft größer. Desto größer die Kraft wird, desto schneller wird doch auch das Auto.
+    </div>
+  </div>
+  <div class="row  mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Ja, da hast Du Recht. Allerdings benutzen die Physiker für das, was Du da beschreibst, einen anderen Namen. Nämlich Impuls.
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Aber das Wort Kraft ist mir viel vertrauter, das Wort Impuls habe ich in diesem Zusammenhang noch nie gehört.
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Da hast Du auch recht. Aber leider hat das Wort Kraft in der Physik noch eine andere Bedeutung. Daher müssen wir hier den Begriff Impuls benutzen, damit es keine Verwechselung gibt. Das ist auch das, was Du meinst.
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Schüler:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Das Auto bewegt sich also, weil es einen Impuls hat?
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 col-sm-2">
+      <strong>Lehrer:</strong>
+    </div>
+    <div class="col-9 col-sm-10">
+      Ja, so könntest Du das sagen.
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>a)</strong>
+    </div>
+    <div class="col-main">
+      <strong>Nennen oder umschreiben Sie die Strategie, die der Lehrer versucht anzuwenden, um mit der Vorstellung des Schülers umzugehen.</strong>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A14a'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A14a'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A14a'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>b)</strong>
+    </div>
+    <div class="col-main">
+      <strong>Ist die Umsetzung der Strategie des Lehrers gelungen? Bitte begründen Sie ihre Antwort.</strong>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A14b'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A14b'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A14b'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

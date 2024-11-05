@@ -1,0 +1,140 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 5</u></h3>
+</div>
+
+<p>
+  <strong>Sind die folgenden Aspekte fachdidaktische Schwerpunkte der Elementarisierung?</strong>
+</p>
+
+<div class="container mt-2 ">
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A5a'].action_url }}"
+      method="POST"
+    >
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-2 text-center">
+          Ja
+        </div>
+        <div class="col-2 text-center">
+          Nein
+        </div>
+      </div>
+      {{ forms['A5a'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Vereinfachung (Didaktische Reduktion)
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5a'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5a'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A5b'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A5b'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Analyse richtiger Gedankenschritte bei Schüleräußerungen
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5b'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5b'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A5c'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A5c'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Chronologische Anordnung von Unterrichtsinhalten
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5c'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5c'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A5d'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A5d'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Zerlegung von Inhalten in grundlegende Lernschritte
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5d'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5d'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A5e'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A5e'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Einordnung von Bestandteilen der Physik in den Lehrplan
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5e'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5e'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A5f'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A5f'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Bestimmung von Sinneinheiten und Verständniselementen
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5f'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A5f'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

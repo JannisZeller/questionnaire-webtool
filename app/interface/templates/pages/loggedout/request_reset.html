@@ -1,0 +1,93 @@
+{% extends "./components/base.html" %}
+
+{% block head %}
+  {% if not consent_missing and enable_recaptcha %}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function onRequestReset(token) {
+        document.getElementById("requestResetForm").submit();
+      }
+    </script>
+  {% endif %}
+
+  <title>FDW-Assessment Reset</title>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container-md p-3"  style="margin-bottom: 5em;">
+
+    <div class="container justify-content-center text-center border-bottom mb-3">
+      <h1>Willkommen beim FDW-Assessment Physik</h1>
+    </div>
+
+    <h2>Anfragen eines Reset-Codes</h2>
+
+    <form id="requestResetForm" method="POST" action="">
+      {{ form.hidden_tag() }}
+      <div class="form-group row mt-1">
+        <label for="email" class="col-md-2 col-form-label">E-Mail</label>
+        <div class="col-sm-5">
+          {{ form.email(class_="form-control") }}
+        </div>
+      </div>
+      {% if not consent_missing %}
+        <div class="form-group row mt-1">
+          <div class="col-md-2"></div>
+          <div class="col-sm-5">
+            {% if enable_recaptcha %}
+              <button
+                type="submit"
+                class="g-recaptcha btn btn-primary"
+                data-sitekey="{{ recaptcha_site_key }}"
+                data-callback='onRequestReset'
+                data-action='submit'
+              >
+                Ok
+              </button>
+            {% else %}
+              <button
+                type="submit"
+                class="btn btn-primary"
+              >
+                Ok
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </form>
+
+
+    {% include "./components/form_errors.html" %}
+
+    {% include "./components/alert_consent.html" %}
+
+    {% if enable_recaptcha %}
+      {% include "./components/alert_recaptcha.html" %}
+    {% endif %}
+
+
+    {% if email_sent %}
+      <div class="bg-success p-2 my-2 rounded text-center">
+        <p>
+          Eine E-Mail mit einem Reset-Code wurde an die angegebene E-Mail Adresse versandt. Bitte überprüfen Sie ggf. Ihren Spam-Ordner.
+        </p>
+        <a class="btn btn-secondary col-6 col-md-2" href="{{ url_for('user_reset_interface.user_reset') }}">
+        Account zurücksetzen
+        </a>
+      </div>
+    {% endif %}
+
+    {% if no_user %}
+      <div class="bg-danger my-3 p-2 rounded text-center">
+        <span>Es gibt kein Nutzerkonto mit dieser E-Mail Adresse.</span>
+      </div>
+    {% endif %}
+
+    <div class="my-3">
+      <span>Kein Account? <a href="{{ url_for('signup_interface.signup') }}">Registrieren</a></span>.
+    </div>
+
+  </div>
+{% endblock %}

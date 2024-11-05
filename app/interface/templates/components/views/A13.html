@@ -1,0 +1,30 @@
+<div class="row text-center">
+  <h3><u>Aufgabe 13</u></h3>
+</div>
+
+<p>
+  <strong>Sie wollen mit einem Schüler folgendes Diagramm besprechen:</strong>
+</p>
+
+<div class="text-center">
+  <img src="{{ url_for('static', filename='assets/images/img_A13.jpg') }}" style="width: 75%;">
+</div>
+
+<p class="mt-2">
+  <strong>Wie könnte der Schüler aufgrund seiner Alltagserfahrungen dieses Diagramm wahrnehmen bzw.
+verstehen?</strong>
+</p>
+
+<div class="container">
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A13'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A13'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A13'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+</div>

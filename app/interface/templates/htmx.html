@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+
+  <script src="{{ url_for('static', filename='theming.js') }}"></script>
+  <script src="{{ url_for('static', filename='htmx.min.js') }}"></script>
+</head>
+
+
+<script>setDocThemePreLoad()</script>
+
+
+
+
+
+<body style="height:100vh;">
+
+
+
+  <header class="bg-primary">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-3 col-sm-6 text-start px-4 py-2">
+          <a
+            href="{{ url_for('index_interface.home') }}"
+            class="text-light text-decoration-none"
+          >
+            <h4 class="d-sm-inline d-none">PCK-Assessment</h4>
+            <h4 class="d-inline d-sm-none">PCKA</h4>
+          </a>
+        </div>
+
+        <div class="col col-sm-6 text-end px-2 py-2">
+
+          {# Mode toggler #}
+          <label class="toggle navbar-text align-middle d-inline-block">
+            <input type="checkbox" id="modeToggler">
+            <span class="slider round" style=""></span>
+          </label>
+          <script>setThemeTogglerThemePrelaod()</script>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  {# Cookie banner #}
+  <div
+    id="cookieBanner"
+    class="alert alert-dark d-flex text-center justify-content-center align-items-center mb-0" role="alert"
+    >
+    <p>
+      🍪 This website uses cookies to enable certain functionality
+      (<a class="d-inline" href="https://www.cookiesandyou.com/" target="blank">learn more</a>).
+      There are no cookies related to advertisement.
+      Please consent to our cookie and data privacy conditions TODO:
+      <a
+        href="{{ url_for('consent_interface.consent') }}"
+        type="button"
+        class="btn btn-primary btn-sm ms-3 mt-2">
+        OK
+      </a>
+    </p>
+  </div>
+
+
+  <div class="container">
+
+    <h2>Login</h2>
+
+    <div class="row">
+      <button onclick="login()">
+        Login
+      </button>
+    </div>
+    <script>
+    async function login() {
+      let headers = new Headers();
+      headers.set('Authorization', 'Basic ' + btoa("test" + ":" + "test"));
+
+      var res = await fetch("{{ url_for('auth.login') }}", {
+        method:'GET',
+        headers: headers,
+        credentials: 'include',
+      });
+      const body = await res.json();
+      console.log(body);
+    }
+    </script>
+
+
+    {# <div class="row">
+      <button onclick="cuser()">
+        Get Cuser
+      </button>
+    </div>
+    <script>
+    async function cuser() {
+      var res = await fetch("{{ url_for('auth.cuser') }}", {
+        method:'GET',
+        credentials: 'include'
+      });
+      const body = await res.json();
+      console.log(body);
+    }
+    </script> #}
+
+
+
+    <div class="row py-3">
+      <button
+        hx-get="{{ url_for('auth.cuser') }}"
+        hx-trigger="click"
+        hx-target="#cuser"
+        hx-swap="innterHTML"
+      >
+        hx-get Cuser
+      </button>
+    </div>
+
+    <div id="cuser">
+      cuser
+    </div>
+
+    <div class="row py-3">
+      <button
+        hx-get="{{ url_for('auth.logout') }}"
+        hx-trigger="click"
+        hx-target="#logout"
+        hx-swap="innterHTML"
+      >
+        hx-get logout
+      </button>
+    </div>
+
+    <div id="logout">
+      logout
+    </div>
+
+
+
+    <div class="row py-3">
+      <button
+        hx-get="{{ url_for('test.test_html') }}"
+        hx-trigger="click"
+        hx-target="#test"
+        hx-swap="innterHTML"
+      >
+        hx-get test route
+      </button>
+    </div>
+
+    <div id="test">
+      test route
+    </div>
+
+    <div class="row py-3">
+      <button
+        hx-get="{{ url_for('test.test_rtemplate') }}"
+        hx-trigger="click"
+        hx-target="#test_template"
+        hx-swap="innterHTML"
+      >
+        hx-get test template route
+      </button>
+    </div>
+
+    <div id="test_template">
+      test template route
+    </div>
+
+
+  </div>
+
+
+	<script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
+  <script src="{{ url_for('static', filename='custom.js') }}"></script>
+
+</body>
+
+</html>

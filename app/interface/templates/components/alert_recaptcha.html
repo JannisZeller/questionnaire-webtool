@@ -1,0 +1,11 @@
+{% if recaptcha_failed %}
+  <div class="bg-danger my-3 p-2 rounded text-center">
+    <span>Ihre ReCaptcha-Validierung ist fehlgeschlagen, d. h., Sie könnten aus Sicht von ReCaptcha ein Bot sein. Bitte laden Sie die Seite erneut und versuchen es noch einmal.</span>
+  </div>
+{% endif %}
+
+{% if recaptcha_timedout %}
+  <div class="bg-danger my-3 p-2 rounded text-center">
+    <span>Ihre ReCaptcha-Validierung hatte einen Timeout. Bitte laden Sie die Seite erneut und versuchen es noch einmal.</span>
+  </div>
+{% endif %}

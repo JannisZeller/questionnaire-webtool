@@ -1,0 +1,26 @@
+{% extends "./components/base.html" %}
+
+{% block head %}
+	<title>FDW-Assessment</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-md p-3">
+
+  <div class="container justify-content-center text-center border-bottom mb-3">
+    <h1>Willkommen beim FDW-Assessment Physik</h1>
+  </div>
+
+  <div class="content justify-content-center">
+    {% include "./components/infos.html" %}
+  </div>
+
+  <div class="container text-center justify-content-center">
+    <a class="btn btn-primary" href="{{ url_for('auth_interface.login') }}">Login</a>
+    <p class="pt-5">Noch kein Account?</p>
+    <a class="btn btn-secondary" href="{{ url_for('signup_interface.signup') }}">Registrieren</a>
+  </div>
+
+</div>
+{% endblock %}

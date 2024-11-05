@@ -1,0 +1,40 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 17</u></h3>
+</div>
+
+<p>
+  <strong>Ein Schüler äußert folgende Aussage:</strong>
+</p>
+
+<div class="container rounded border py-2">
+  „Bei einer Bewegung im Kreis wirkt die Zentrifugalkraft entgegen der Zentripetalkraft und deswegen bleibt der Körper auf der Kreisbahn. Für beide Kräfte sind die Formeln bis auf das Vorzeichen gleich.“
+</div>
+
+<p class="mt-3">
+  Man kann die Schüleraussage dann gut verstehen, wenn man dem Schüler unterstellt, dass er die Kreisbewegung aufgrund der konstanten Bahngeschwindigkeit nicht als beschleunigte Bewegung zum Kreismittelpunkt versteht. Außerdem weiß er aufgrund seiner Alltagserfahrung, dass im beschleunigten Bezugssystem auf den Körper immer eine Kraft nach außen wirkt.
+</p>
+
+<p>
+  <strong> Sie gehen als Lehrkraft auf diese falsche Aussage ein und wollen bei dem Schüler einen kognitiven Konflikt herbeiführen.</strong>
+</p>
+
+<p>
+  <strong> Wie würden Sie unter dieser Prämisse auf die Schüleraussage reagieren? Formulieren Sie in Stichworten.</strong>
+</p>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A17'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A17'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A17'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

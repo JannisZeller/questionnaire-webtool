@@ -1,3 +1,9 @@
+# Currently excluding the models for privacy reasons
+/models
+
+# For development purposes...
+/temp.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

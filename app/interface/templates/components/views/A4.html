@@ -1,0 +1,36 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 4</u></h3>
+</div>
+
+<p>
+  <strong>Woher kommen Schülervorstellungen? Nennen und erläutern Sie kurz zwei Möglichkeiten.</strong>
+</p>
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A4_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A4_1'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A4_1">1.</label>
+        {{ forms['A4_1'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A4_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A4_2'].hidden_tag() }}
+      <div class="form-group row">
+        <label class="col-label" for="A4_2">2.</label>
+        {{ forms['A4_2'].response_text(class_="textarea-medium col-main form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

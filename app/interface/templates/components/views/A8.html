@@ -1,0 +1,209 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 8</u></h3>
+</div>
+
+<p>
+  <strong>Schüler sollen Aussagen über eine Kiste treffen, die mit konstanter Geschwindigkeit von 4 m/s über den Boden geschoben wird.</strong>
+</p>
+<p>
+  <strong><i>Achtung:</i> Wir gehen davon aus, dass die Kiste sich schon mit 4 m/s bewegt!</strong>
+</p>
+<div class="text-center">
+  <img src="{{ url_for('static', filename='assets/images/img_A8.jpg') }}" style="width: 50%;">
+</div>
+<p class="mt-2">
+  <strong>Handelt es sich bei den folgenden Schüleraussagen um Aussagen, die aufgrund von typischen, falschen Konzepten zum Kraftbegriff zustande gekommen sind?</strong>
+</p>
+
+<div class="container mt-2 ">
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A8a'].action_url }}"
+      method="POST"
+    >
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-2 text-center">
+          Ja
+        </div>
+        <div class="col-2 text-center">
+          Nein
+        </div>
+      </div>
+      {{ forms['A8a'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Die Stärke der Kraft, die bei konstanter Geschwindigkeit auf die Kiste ausgeübt werden muss, muss gleich der Stärke der Reibungskräfte sein, die der Bewegung entgegenwirken.
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8a'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8a'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A8b'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A8b'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Die Stärke der Kraft, die bei konstanter Geschwindigkeit auf die Kiste ausgeübt werden muss, muss größer sein als die Stärke der Reibungskräfte, die der Bewegung entgegenwirken.
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8b'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8b'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A8c'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A8c'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Wenn die Kraft auf die Kiste verdoppelt wird, erhöht sich die Geschwindigkeit auf 8 m/s.
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8c'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8c'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A8d'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A8d'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Die Summe aller Kräfte, die auf die Kiste wirken, ist null.
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8d'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8d'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A8e'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A8e'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Die Stärke der Kraft, die bei konstanter Geschwindigkeit auf die Kiste ausgeübt werden muss, muss größer sein als die Gewichtskraft.
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8e'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-2 text-center">
+          <table style="height: 100%; width: 100%;">
+            <tbody>
+              <tr>
+                <td class="align-middle">
+                  {{ forms['A8e'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

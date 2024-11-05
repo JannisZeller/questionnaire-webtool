@@ -1,0 +1,41 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 9</u></h3>
+</div>
+
+<p>
+  <strong>Nennen Sie ein Beispiel aus dem Alltag, an dem für Schüler deutlich wird, dass die Zentripetalkraft zum Kreismittelpunkt wirkt. Bitte begründen Sie ihre Auswahl.</strong>
+</p>
+
+<div class="container mt-2">
+
+  <div class="row">
+    <strong>Beispiel:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A9_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A9_1'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A9_1'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+  <div class="row mt-3">
+    <strong>Begründung:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A9_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A9_2'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A9_2'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

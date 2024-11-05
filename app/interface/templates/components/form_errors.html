@@ -1,0 +1,9 @@
+{% if form.errors %}
+    <div class="bg-danger p-2 my-2 rounded">
+    {% for field, errors in form.errors.items() %}
+        <span class="d-block py-1" >
+        {{ ', '.join(errors) }}
+        </span>
+    {% endfor %}
+    </div>
+{% endif %}

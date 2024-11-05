@@ -1,0 +1,23 @@
+<div class="row text-center">
+  <h3><u>Aufgabe 6</u></h3>
+</div>
+
+<p>
+  <strong>Nennen Sie fachlich nicht korrekte Vorstellungen zu den physikalischen Konzepten der
+Geschwindigkeit und Beschleunigung, die Schüler typischerweise haben.</strong>
+</p>
+
+<div class="container mt-2">
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A6'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A6'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A6'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

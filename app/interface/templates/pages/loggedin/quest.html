@@ -1,0 +1,116 @@
+{% extends "./components/base_loggedin.html" %}
+{% set active_view = active_view|default('quest') %}
+{% set view_missing = view_missing|default(false) %}
+{% set current_view = current_view|default(none) %}
+
+
+{% block head %}
+	<title>FDW-Assessment</title>
+{% endblock %}
+
+
+{% block innerContent %}
+
+  {# Scrollbar #}
+	<div class="container justify-content-center text-center mb-3">
+		<h2>Testaufgaben</h2>
+	</div>
+  <div class="row">
+    <p>
+      Sie befinden sich in deiner Testbearbeitung "<b>{{ active_test_name }}
+      (ID {{ active_edit_no }})</b>". Um die aktive Testbearbeitung zu wechseln
+      oder eine neue hinzuzufügen, nutzen Sie bitte die Einstellungen unter
+      "<a href="{{ url_for('account_interface.account') }}">Account</a>".
+    </p>
+  </div>
+  <div
+    class="
+      row overflow-auto flex-nowrap
+      m-3 px-5 py-3
+      rounded border
+    "
+  >
+    {% for view, specs in views.items() %}
+      <a
+        class="btn col m-1 px-3
+          view-scrollpill
+          {{ 'btn-primary active' if specs['is_active'] }}
+          {{ 'btn-success' if not specs['is_active'] and (specs['progress'] == 'finished') }}
+          {{ 'btn-warning' if not specs['is_active'] and (specs['progress'] == 'some') }}
+          {{ 'btn-secondary' if not specs['is_active'] and (specs['progress'] == 'none') }}
+        "
+        href="{{ url_for('quest_interface.quest') + view }}"
+        id="{{ view }}"
+      >
+        {{ view }}
+      </a>
+    {% endfor %}
+  </div>
+
+
+  {# Main Item #}
+  <div class="row mb-5 mt-2">
+    {% if view_missing %}
+      <div class="bg-warning text-dark my-3 p-2 rounded text-center">
+        <span>Die Testaufgabe, die Sie angefragt haben existiert nicht.</span>
+      </div>
+    {% endif %}
+
+    {% if not current_view %}
+      <div class="bg-secondary text-light my-3 p-2 rounded text-center">
+        <span>Wählen Sie eine Testaufgabe, um zu starten.</span>
+      </div>
+    {% endif %}
+
+    {% if current_view %}
+      {% include "./components/views/" + current_view + ".html" %}
+    {% endif %}
+	</div>
+
+
+  {# Footer #}
+  <div class="row pt-3 border-top">
+    <div class="col-6">
+      {% if previous_view %}
+        <a
+          href="{{ url_for('quest_interface.quest') + previous_view }}"
+          class="d-inline-block btn btn-primary"
+        >
+          ⮜ Vorherige Aufgabe
+        </a>
+      {% else %}
+        <span
+          class="d-inline-block btn btn-secondary disabled"
+        >
+          ⮜ Vorherige Aufgabe
+        </span>
+      {% endif %}
+    </div>
+
+    <div class="col-6">
+      {% if next_view %}
+        <a
+          href="{{ url_for('quest_interface.quest') + next_view }}"
+          class="d-inline-block btn btn-primary float-end"
+        >
+          Nächste Aufgabe ⮞
+        </a>
+      {% else %}
+        <span
+          class="d-inline-block btn btn-secondary float-end disabled"
+        >
+          Nächste Aufgabe ⮞
+        </span>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+{% block postscripts %}
+  <script>
+    scrollActiveItemIntoView();
+  </script>
+{% endblock %}

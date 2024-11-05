@@ -1,0 +1,45 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 16</u></h3>
+</div>
+
+<p>
+  <strong>Ein Experiment im Physikunterricht kann verschieden Funktionen erfüllen. Beispielsweise kann es für die Schüler motivierend sein.</strong>
+</p>
+
+<p>
+  <strong>Beziehen Sie sich beispielhaft auf ein einen Versuch zur beschleunigten Bewegung und begründen Sie, warum Ihr Experiment motivierend ist.</strong>
+</p>
+
+<div class="container mt-2">
+
+  <div class="row">
+    <strong>Experiment:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A16_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A16_1'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A16_1'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+  <div class="row mt-3">
+    <strong>Begründung:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A16_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A16_2'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A16_2'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

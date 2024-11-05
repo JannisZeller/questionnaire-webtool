@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
+
+  <script src="{{ url_for('static', filename='prescript.js') }}"></script>
+  {% block prescripts %}{% endblock %}
+
+	{% block head %}{% endblock %}
+
+</head>
+
+
+<script>setDocThemePreLoad()</script>
+
+
+
+
+
+<body style="height:100vh;">
+
+
+  <header class="bg-primary">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-3 col-sm-6 text-start px-4 py-2">
+          <a
+            href="{{ url_for('index_interface.home') }}"
+            class="text-light text-decoration-none"
+          >
+            <h4 class="d-sm-inline d-none">FDW-Assessment</h4>
+            <h5 class="d-inline d-sm-none">FDW-Assessment</h5>
+          </a>
+        </div>
+
+        <div class="col col-sm-6 text-end px-2 py-2">
+
+          {# Mode toggler #}
+          <label class="toggle navbar-text align-middle d-inline-block">
+            <input type="checkbox" id="modeToggler">
+            <span class="slider round" style=""></span>
+          </label>
+          <script>setThemeTogglerThemePrelaod()</script>
+
+
+          {# Navbar right #}
+          {% block navbarRight %}{% endblock %}
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  {# Cookie banner #}
+  <div
+    id="cookieBanner"
+    class="alert alert-dark d-flex text-center justify-content-center align-items-center mb-0" role="alert"
+    >
+    <p>
+      🍪 Diese Webseite nutzt Cookies & verwandte Technologien für bestimmte Funktionen (<a class="d-inline" href="{{ url_for('index_interface.about') }}" target="blank">Datenschutzhinweise</a>). Es gibt auf dieser Webseite keine werbebezogenen Cookies. Mit der Nutzung der Webseite akzeptieren Sie die Nutzung dieser Tools:
+      <br>
+      <a
+        href="{{ url_for('consent_interface.consent') }}"
+        type="button"
+        class="btn btn-primary btn-sm mt-2">
+        OK
+      </a>
+    </p>
+  </div>
+
+  {# Main content #}
+  <div id="mainContent" class="container">
+    <div class="row justify-content-center">
+
+      {% block content %}{% endblock %}
+
+    </div>
+  </div>
+
+
+
+  {% block postscripts %}{% endblock %}
+	<script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
+  <script src="{{ url_for('static', filename='postscript.js') }}"></script>
+
+</body>
+
+</html>

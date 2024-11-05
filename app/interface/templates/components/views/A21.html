@@ -1,0 +1,63 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 21</u></h3>
+</div>
+
+<p>
+  <strong>Ein Vater zieht seine Tochter mit einem Schlitten über den Schnee. Der Schlitten hat dabei eine konstante Geschwindigkeit von 6 km/h.</strong>
+</p>
+
+<p>
+  <strong>Geben Sie zu den folgenden Schüleraussagen bezüglich der beschriebenen Situation an, welche typische Schülerfehlvorstellung jeweils zugrunde liegt.</strong>
+</p>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>a)</strong>
+    </div>
+    <div class="col-main">
+      <strong>„Die Kraft, mit der der Vater an dem Schlitten zieht, ist größer als die Reibungskraft des Schlittens.“</strong>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A21a'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A21a'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A21a'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<div class="container mt-2">
+
+  <div class="row mt-2">
+    <div class="col-label">
+      <strong>b)</strong>
+    </div>
+    <div class="col-main">
+      <strong>„Wenn der Vater mit doppelter Kraft ziehen würde, würde sich die Geschwindigkeit des Schlittens auf 12 km/h erhöhen.“</strong>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A21b'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A21b'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A21b'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

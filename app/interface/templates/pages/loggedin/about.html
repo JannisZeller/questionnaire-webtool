@@ -1,0 +1,7 @@
+{% extends "./components/base_loggedin.html" %}
+{% set active_view = active_view|default('about') %}
+
+
+{% block innerContent %}
+    {% include "./components/about.html" %}
+{% endblock %}

@@ -1,0 +1,41 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 2</u></h3>
+</div>
+
+<p>
+  <strong>Nennen Sie ein Alltagsbeispiel, das geeignet ist, um Geschwindigkeit als vektorielle Größe einzuführen. Bitte begründen Sie ihre Auswahl.</strong>
+</p>
+
+<div class="container mt-2">
+
+  <div class="row">
+    <strong>Beispiel:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A2_1'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A2_1'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A2_1'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+  <div class="row mt-3">
+    <strong>Begründung:</strong>
+  </div>
+  <div class="row mt-2">
+    <form
+      action="{{ forms['A2_2'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A2_2'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A2_2'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+
+</div>

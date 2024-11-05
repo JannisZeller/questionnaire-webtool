@@ -1,0 +1,120 @@
+<div class="row text-center mb-2">
+  <h3><u>Aufgabe 19</u></h3>
+</div>
+
+<p>
+  <strong>Sind folgende Aussagen für den Begriff der „Didaktischen Rekonstruktion“ zutreffend?</strong>
+</p>
+
+<div class="container mt-2 ">
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A19a'].action_url }}"
+      method="POST"
+    >
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-2 text-center">
+          Ja
+        </div>
+        <div class="col-2 text-center">
+          Nein
+        </div>
+      </div>
+      {{ forms['A19a'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Das Modell der didaktischen Rekonstruktion fordert es, fachliche Inhalte sowie Schülervorstellungen bei der Unterrichtsplanung gleichermaßen zu berücksichtigen.
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19a'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19a'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A19b'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A19b'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Didaktische Rekonstruktion ist ein regelgeleitetes Verfahren zur Überarbeitung von Unterrichtsstunden nach deren Erprobung.
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19b'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19b'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A19c'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A19c'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Didaktische Rekonstruktion ist ein Verfahren der Unterrichtsanalyse, bei welchem aus einer gegebenen Unterrichtsstunde die Schülervorstellungen rekonstruiert werden.
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19c'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19c'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A19d'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A19d'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Im Rahmen einer Unterrichtsanalyse werden aus einer gegebenen Unterrichtsstunde die Absichten und Ziele der Lehrperson rekonstruiert.
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19d'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19d'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row py-2 border-bottom">
+    <form
+      action="{{ forms['A19e'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A19e'].hidden_tag() }}
+      <div class="form-group row mt-2">
+        <div class="col-8">
+          Bei diesem Modell der Unterrichtsplanung konstruiert die Lehrperson eine Sachstruktur für den Unterricht unter Berücksichtigung der jeweiligen Ziele des Unterrichts und der Lernvoraussetzungen der Schüler.
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19e'].yesbox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+        <div class="col-2 text-center">
+          {{ forms['A19e'].nobox(class_="form-check-input", onchange="submitItemAJAX(this)") }}
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

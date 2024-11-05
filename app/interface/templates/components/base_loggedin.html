@@ -1,0 +1,84 @@
+{% extends "./components/base.html" %}
+{% set active_view = active_view|default('home') %}
+
+
+{% block head %}
+	<title>FDW-Assessment</title>
+{% endblock %}
+
+
+{% block navbarRight %}
+
+	{# Session timer #}
+  <div class="ms-1 align-middle d-inline-block">
+    <a
+      id="timerBanner"
+      class="btn btn-secondary"
+      type="button"
+      data-bs-toggle="tooltip"
+      data-bs-placement="bottom"
+      title="Refresh session"
+      href="{{ url_for('auth_interface.refresh_session') }}"
+    >
+      ⌛
+    </a>
+  </div>
+
+  {# Offanvas side menu (small screens) #}
+  <div class="ms-1 align-middle d-inline-block d-xl-none">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasSidemenu"
+      aria-controls="offcanvasSidemenu"
+      aria-label="Toggle navigation"
+    >
+      Menü
+    </button>
+  </div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container row gap-5">
+
+  {# Side menu (bigger screens, left) #}
+  <div
+    class="
+      d-none
+      d-xl-block
+      col-2
+      p-3
+      "
+    style="height:100%; width:280px;"
+  >
+    {% include "./components/sidebar_items.html" %}
+  </div>
+
+
+  {# Main text #}
+  <div class="col-12 col-xl-8 py-3 px-3">
+    {% block innerContent %}{% endblock %}
+  </div>
+
+
+  {# Offcanvas side menu (small screens, right) #}
+  <div
+    class="offcanvas offcanvas-end d-xl-none"
+    tabindex="-1"
+    id="offcanvasSidemenu"
+    aria-labelledby="offcanvasSidemenuLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasSidemenuLabel">Menü</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      {% include "./components/sidebar_items.html" %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

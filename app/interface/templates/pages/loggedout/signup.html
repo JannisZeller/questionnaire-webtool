@@ -1,0 +1,100 @@
+{% extends "./components/base.html" %}
+
+{% block head %}
+  {% if not consent_missing and enable_recaptcha %}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function onSignup(token) {
+        document.getElementById("signupForm").submit();
+      }
+    </script>
+  {% endif %}
+
+  <title>FDW-Assessment Registrierung</title>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container-md p-3" style="margin-bottom: 5em;">
+
+    <div class="container justify-content-center text-center border-bottom mb-3">
+      <h1>Willkommen beim FDW-Assessment Physik</h1>
+    </div>
+
+    <br style="clear:both;"/>
+
+    <h2>Registrierung</h2>
+
+    {# novalidate #}
+    <form id="signupForm" method="POST" action="">
+      {{ form.hidden_tag() }}
+      <div class="form-group row mt-1">
+        <label for="username" class="col-md-2 col-form-label">Benutzername</label>
+        <div class="col-sm-5">
+          {{ form.username(class_="form-control") }}
+        </div>
+      </div>
+      <div class="form-group row mt-1">
+        <label for="email" class="col-md-2 col-form-label">E-Mail</label>
+        <div class="col-sm-5">
+          {{ form.email(class_="form-control") }}
+        </div>
+      </div>
+      <div class="form-group row mt-1">
+        <label for="password" class="col-md-2 col-form-label">Passwort</label>
+        <div class="col-sm-5">
+          {{ form.password(class_="form-control") }}
+        </div>
+      </div>
+
+      {% if not consent_missing %}
+        <div class="form-group row mt-1">
+          <div class="col-md-2"></div>
+          <div class="col-sm-5">
+            {% if enable_recaptcha %}
+              <button
+                type="submit"
+                class="g-recaptcha btn btn-primary"
+                data-sitekey="{{ recaptcha_site_key }}"
+                data-callback='onSignup'
+                data-action='submit'
+              >
+                Ok
+              </button>
+            {% else %}
+              <button
+                type="submit"
+                class="btn btn-primary"
+              >
+                Ok
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </form>
+
+
+    {% include "./components/form_errors.html" %}
+
+    {% include "./components/alert_consent.html" %}
+
+    {% if enable_recaptcha %}
+      {% include "./components/alert_recaptcha.html" %}
+    {% endif %}
+
+
+    <!-- <div id="user_created"></div> -->
+
+    <span>Sie haben bereits einen Account? <a href="{{ url_for('auth_interface.login') }}">Einloggen</a>.</span>
+
+    <div class="my-2 mt-4">
+      <h4>Hinweise</h4>
+      <ul>
+        <li>Wählen Sie einen <strong>anonymen Benutzernamen</strong>, um Verbindungen zwischen Ihrer Person und den Ergebnissen des Assessments zu vermeiden.</li>
+        <li>Ihre <strong>E-Mail Adresse</strong> wird ausschließlich in verschlüsselter Form, die auch wir selbst nicht entschlüsseln können, hinterlegt. Sie dient lediglich für den Fall, dass Sie ihren Account zurücksetzen wollen.</li>
+        <li>Näheres in den (<a class="d-inline" href="{{ url_for('index_interface.about') }}" target="blank">Datenschutzhinweisen</a>)</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+<div class="row text-center">
+  <h3><u>Aufgabe 15</u></h3>
+</div>
+
+<p>
+  <strong>Schüler sollen folgende Situation betrachten: Ein Ball rollt in der dargestellten Rinne (Draufsicht) und verlässt diese am Punkt <i>R</i>.</strong>
+</p>
+
+<div class="text-center">
+  <img src="{{ url_for('static', filename='assets/images/img_A15_1.jpg') }}" style="width: 40%;">
+</div>
+
+<p class="mt-2">
+  <strong>Schüler A zeichnet folgende Bahn, die der Ball nach Verlassen der Rinne beschreiben soll:</strong>
+</p>
+
+<div class="text-center">
+  <img src="{{ url_for('static', filename='assets/images/img_A15_2.jpg') }}" style="width: 60%;">
+</div>
+<div class="text-center">
+  <i>Lösung von Schüler A</i>
+</div>
+
+<p class="mt-2">
+  <strong>Angenommen, der Schüler versteht die Zeichnung korrekt als Draufsicht: Welche fachlich nicht korrekte Vorstellung des Schülers A liegt bei der gezeichneten Bahnkurve zugrunde?</strong>
+</p>
+
+<div class="container">
+  <div class="row mt-1">
+    <form
+      action="{{ forms['A15'].action_url }}"
+      method="POST"
+    >
+      {{ forms['A15'].hidden_tag() }}
+      <div class="form-group row">
+        {{ forms['A15'].response_text(class_="textarea-large form-control", onchange="submitItemAJAX(this)") }}
+      </div>
+    </form>
+  </div>
+</div>
