@@ -40,6 +40,7 @@ Needs the following keys to be specified in `/env/config.jsonc`:
     "DIMSCORES_MODE": "summation", // "regression" or "summation"
     "PRELOAD_MODELS": false
 }
+```
 
 Needs the following keys to be specified in `/env/secret_config.jsonc`:
 ```jsonc
@@ -55,3 +56,4 @@ Needs the following keys to be specified in `/env/secret_config.jsonc`:
     "GMAIL_ADDRESS": "",
     "GMAIL_PW": "",
 }
+```
