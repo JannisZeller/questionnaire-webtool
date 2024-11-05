@@ -21,7 +21,7 @@ Many... Following soon...
 ## Necessary Config (2024-11-05)
 
 Needs the following keys to be specified in `/env/config.jsonc`:
-```json
+```jsonc
 {
     // --- Base ---
     "API_INTERFACE_COMMUNICATION": "functional", // "request" or "functional"
@@ -42,7 +42,7 @@ Needs the following keys to be specified in `/env/config.jsonc`:
 }
 
 Needs the following keys to be specified in `/env/secret_config.jsonc`:
-```json
+```jsonc
 {
     "SQLALCHEMY_DATABASE_URI": "",
     "SECRET_KEY": "",
