@@ -11,12 +11,13 @@ This code is highly experimental and "researchy" stuff - nothing to be deployed 
 
 ## ToDo's
 
-Many... Following soon...
-
 - Currently the Tool is set up for a specific questionnaire but can (and should) be abstracted similarly to and under the usage of [`questionnaire-tools`](https://github.com/JannisZeller/questionnaire-tools).
 - To be clear: The abstraction of the code *should* happen by integrating the [`questionnaire-tools`](https://github.com/JannisZeller/questionnaire-tools) into this project.
 - The `/models` folder containing the models for actually grading the questionnaire responses and creating reports is currently excluded via `.gitignore` for data-privacy reasons. For development, there should at least be dummy models in this directory.
 - A proper frontend.
+- A proper database management including shedulers for backups etc.
+- An "Admin"-View for retrieving data etc.
+- ...
 
 ## Necessary Config (2024-11-05)
 
