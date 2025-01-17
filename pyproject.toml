@@ -5,6 +5,10 @@ description = "A tool for the setup of an automated questionnaire as a webtool"
 authors = ["JannisZeller"]
 readme = "README.md"
 
+[virtualenvs]
+create = true
+in-project = true
+
 [tool.poetry.dependencies]
 python = "^3.11"
 numpy = "^1"
